@@ -4,8 +4,8 @@ Half a year has passed since I joined Okumura Lab, but still can't develop a foc
 
 ## Principles
 1. Papers are roughly divided to two types: 
-  1. directly lead to my research topic
-  2. related algorithm (ML/DL)
+  * directly lead to my research topic
+  * related algorithm (ML/DL)
 2. 
 
 ## Catalogue
