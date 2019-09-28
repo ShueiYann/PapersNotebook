@@ -2,12 +2,18 @@
 
 Half a year has passed since I joined Okumura Lab, but still can't develop a focused research question. **A little of everything, nothing at all.** This repo is developed to help me dig more in the topic I'm interested with.:muscle:	
 
+## Principles
+1. Papers are roughly divided to two types: 
+ 1) directly related to my research topic
+ 2) related algorithm (ML/DL)
+2. 
+
 ## Catalogue
 
 * [Subword-aligned Cross-lingual Word Embeddings](#subword-aligned-cross-lingual-word-embeddings)
-  * [Cross-lingual Word Embeddings](#CWE)
-  * [Monolingual Word Embeddings](#MWE)
-  * [Subword](#Subword)
+  * [Cross-lingual Word Embeddings](#cross-lingual-word-embeddings)
+  * [Monolingual Word Embeddings](#monolingual-word-embeddings)
+  * [Subwords](#subwords)
 
 ## Subword-aligned Cross-lingual Word Embeddings
 
