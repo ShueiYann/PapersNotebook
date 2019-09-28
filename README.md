@@ -13,7 +13,7 @@ Half a year has passed since I joined Okumura Lab, but still can't develop a foc
 
 ### Cross-lingual Word Embeddings
 
-* [A Survey of Cross-lingual Word Embedding Models] (https://arxiv.org/pdf/1706.04902.pdf)
+* [A Survey of Cross-lingual Word Embedding Models](https://arxiv.org/pdf/1706.04902.pdf)
 
   
 
