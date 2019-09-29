@@ -26,7 +26,7 @@ in a joint embedding space
 ![](./images/cross-lingual-embedding.png)  
 data requirements: word/sentence/document alignment  
 obejective functions  
- * compare meaning of
+  * compare meaning of
 
 * [Unsupervised Cross-lingual Word Embeddings Based on Subword Alignment](http://www.tkl.iis.u-tokyo.ac.jp/new/uploads/publication_file/file/911/cicling2019.pdf)
 
