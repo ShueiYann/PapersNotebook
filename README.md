@@ -6,7 +6,7 @@ Half a year has passed since I joined Okumura Lab, but still can't develop a foc
 1. Papers are roughly divided to two types: 
    * directly lead to my research topic
    * related algorithm (ML/DL)
-2. 
+2. Intensive reading of papers belonging to 2nd level (references by 1st level) are in /2nd, while anchored in this document.
 
 ## Catalogue
 
@@ -78,12 +78,12 @@ Unluckily, it seems the idea of **using subword information in cross-lingual wor
      - unobserved word, PMI = log0 = ∞, set to 0
   
 2. factorize PMI matrix **P** using SVD(Singular Value Decomposition)  
-   - U, V column orthonormal, \psi diagonal singular
+   - U, V column orthonormal, \psi diagonal singular  
     ![PMI-SVD](https://latex.codecogs.com/gif.latex?P&space;=&space;U\psi&space;V^{T})
    
    
 3. reduce embedding matrix X to dimensionality k  
-   - \psi-k: top k singular values, U-k: corresponding columns
+   - \psi-k: top k singular values, U-k: corresponding columns  
     ![k-PMI](https://latex.codecogs.com/gif.latex?X&space;=U_{k}\psi&space;_{k})  
     
 
@@ -101,9 +101,10 @@ Deep Neural Networks with Multitask Learning](https://ronan.collobert.com/pub/ma
     1. Hierarchical Softmax:
        - output layer: using haffman tree
     
-    2. Negative Sampling: 
+    **2. Negative Sampling:** 
 [Distributed Representations of Words and Phrases
-and their Compositionality](https://ronan.collobert.com/pub/matos/2008_nlp_icml.pdf)
+and their Compositionality](./2nd/Distributed-Representations-of-Words-and-Phrases-and-their-Compositionality.md)
+         - 
 
 
 
