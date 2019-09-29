@@ -21,12 +21,15 @@ Half a year has passed since I joined Okumura Lab, but still can't develop a foc
 
 * [A Survey of Cross-lingual Word Embedding Models](https://arxiv.org/pdf/1706.04902.pdf)
 
-monoligual vector representations --> cross-lingual vector representations  
-in a joint embedding space  
+##### Introduction
+
+1. monoligual vector representations --> cross-lingual vector representations (in a joint embedding space)  
 ![](./images/cross-lingual-embedding.png)  
-data requirements: word/sentence/document alignment  
+2. data requirements: word/sentence/document alignment  
 obejective functions  
-  * compare meaning of
+3. value： 
+ 1. compare meaning of words across languages
+ 2. mode transfer between languages (resource-rich --> low-resource, through common representation space), can also be evaluation.
 
 * [Unsupervised Cross-lingual Word Embeddings Based on Subword Alignment](http://www.tkl.iis.u-tokyo.ac.jp/new/uploads/publication_file/file/911/cicling2019.pdf)
 
