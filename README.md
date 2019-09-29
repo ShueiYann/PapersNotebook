@@ -66,7 +66,7 @@ Unluckily, it seems the idea of **using subword information in cross-lingual wor
 1. factorize sparse word-word co-occurance matrix **C** --> dense word representations
 
 2. TF-IDF (Term Frequency-Inverse Document Frequency):
-![TF-IDF](https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwikiNbW5_XkAhUKPXAKHQ-3BakQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.link-assistant.com%2Fnews%2Ftf-idf-tool-for-seo.html&psig=AOvVaw3SMhnLMHGgaTq-da_oEal5&ust=1569838481144190)
+![TF-IDF](https://www.link-assistant.com/images/news/tf-idf-tool-for-seo/screen-03.png)
    - weighting, more frequently a word in a documnet, more important; more docunments the word in, less important.   
    - no location/context information
 * CBOW:
