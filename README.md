@@ -65,10 +65,15 @@ Unluckily, it seems the idea of **using subword information in cross-lingual wor
 * LSA: [Indexing by Latent Semantic Analysis](http://lsa.colorado.edu/papers/JASIS.lsi.90.pdf)  
 1. factorize sparse word-word co-occurance matrix **C** --> dense word representations
 
-2. TF-IDF (Term Frequency-Inverse Document Frequency):
+2.elements(co-occurence counts) in **C** usually be replaced by the following for different purposes
+  - TF-IDF (Term Frequency-Inverse Document Frequency):
 ![TF-IDF](https://www.link-assistant.com/images/news/tf-idf-tool-for-seo/screen-03.png)
-   - weighting, more frequently a word in a documnet, more important; more docunments the word in, less important.   
-   - no location/context information
+    - weighting, more frequently a word in a documnet, more important; more docunments the word in, less important.     - no location/context information
+  - PMI (pointwise mutual information):
+  ![PMI](https://latex.codecogs.com/gif.latex?PMI(w_{i},w_{j})&space;=&space;log\frac{p(w_{i},w_{j})}{p(w_{i})p(w_{j})}=log\frac{count(w_{i},w_{j})count(corpus)}{count(w_{i}),count(w_{j})})
+    - variant TF-IDF, biased by number of words itself (some high-frequency words like "the")
+    - unobserved word, PMI = log0 = ∞, set to 0
+
 * CBOW:
 * SGNS: 
 * GloVe: 
