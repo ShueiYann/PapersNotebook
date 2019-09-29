@@ -66,19 +66,28 @@ Unluckily, it seems the idea of **using subword information in cross-lingual wor
 
 > factorize sparse word-word co-occurance matrix **C** --> dense word representations  
 
-  1. elements(co-occurence counts) in **C** usually be replaced by the following for different purposes
+1. elements(co-occurence counts) in **C** usually be replaced by the following for different purposes
     
-    - TF-IDF (Term Frequency-Inverse Document Frequency):
-![TF-IDF](https://www.link-assistant.com/images/news/tf-idf-tool-for-seo/screen-03.png)
-      - weighting, more frequently a word in a documnet, more important; more docunments the word in, less important.     
-      - no location/context information
-    - PMI (pointwise mutual information):
-  ![PMI](https://latex.codecogs.com/gif.latex?PMI(w_{i},w_{j})&space;=&space;log\frac{p(w_{i},w_{j})}{p(w_{i})p(w_{j})}=log\frac{count(w_{i},w_{j})count(corpus)}{count(w_{i}),count(w_{j})})
-      - variant TF-IDF, biased by number of words itself (some high-frequency words like "the")
-      - unobserved word, PMI = log0 = ∞, set to 0
+   - TF-IDF (Term Frequency-Inverse Document Frequency):  
+![TF-IDF](https://www.link-assistant.com/images/news/tf-idf-tool-for-seo/screen-03.png)  
+     - weighting, more frequently a word in a documnet, more important; more docunments the word in, less important.     
+     - no location/context information
+   - PMI (pointwise mutual information):  
+  ![PMI](https://latex.codecogs.com/gif.latex?PMI(w_{i},w_{j})&space;=&space;log\frac{p(w_{i},w_{j})}{p(w_{i})p(w_{j})}=log\frac{count(w_{i},w_{j})count(corpus)}{count(w_{i}),count(w_{j})})  
+     - variant TF-IDF, biased by number of words itself (some high-frequency words like "the")
+     - unobserved word, PMI = log0 = ∞, set to 0
   
-  2.. factorize  
+2. factorize PMI matrix **P** using SVD(Singular Value Decomposition)  
+![PMI-SVD](https://latex.codecogs.com/gif.latex?P&space;=&space;U\psi&space;V^{T})
+   - U, V column orthonormal, \psi diagonal singular
+3. reduce embedding matrix X to dimensionality k  
+![k-PMI](https://latex.codecogs.com/gif.latex?X&space;=U_{k}\psi&space;_{k})  
+   - \psi-k top k singular values, U-k corresponding columns 
 
+* MML: [Max-margin loss](https://ronan.collobert.com/pub/matos/2008_nlp_icml.pdf)
+  - vocabulary: list of words; corpus: set of texts 
+  - [ ] ??? may expand later (2019/09/29) 
+   - \psi-k top k singular values, U-k corresponding columns 
 * CBOW:
 * SGNS: 
 * GloVe: 
