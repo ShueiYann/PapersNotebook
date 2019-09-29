@@ -28,8 +28,8 @@ Half a year has passed since I joined Okumura Lab, but still can't develop a foc
 2. data requirements: word/sentence/document alignment  
 3. obejective functions  
 4. value:  
- 1. compare meaning of words across languages
- 2. mode transfer between languages (resource-rich --> low-resource, through common representation space), can also be evaluation.
+   - compare meaning of words across languages
+   - mode transfer between languages (resource-rich --> low-resource, through common representation space), can also be evaluation.
 
 * [Unsupervised Cross-lingual Word Embeddings Based on Subword Alignment](http://www.tkl.iis.u-tokyo.ac.jp/new/uploads/publication_file/file/911/cicling2019.pdf)
 
