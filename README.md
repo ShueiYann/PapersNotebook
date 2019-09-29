@@ -78,24 +78,37 @@ Unluckily, it seems the idea of **using subword information in cross-lingual wor
      - unobserved word, PMI = log0 = ∞, set to 0
   
 2. factorize PMI matrix **P** using SVD(Singular Value Decomposition)  
-
-![PMI-SVD](https://latex.codecogs.com/gif.latex?P&space;=&space;U\psi&space;V^{T})
    - U, V column orthonormal, \psi diagonal singular
+    ![PMI-SVD](https://latex.codecogs.com/gif.latex?P&space;=&space;U\psi&space;V^{T})
+   
    
 3. reduce embedding matrix X to dimensionality k  
-
-![k-PMI](https://latex.codecogs.com/gif.latex?X&space;=U_{k}\psi&space;_{k})  
-   - \psi-k: top k singular values, U-k: corresponding columns 
+   - \psi-k: top k singular values, U-k: corresponding columns
+    ![k-PMI](https://latex.codecogs.com/gif.latex?X&space;=U_{k}\psi&space;_{k})  
+    
 
 * MML(Max-margin loss): [A Unified Architecture for Natural Language Processing:
 Deep Neural Networks with Multitask Learning](https://ronan.collobert.com/pub/matos/2008_nlp_icml.pdf)
   - vocabulary: list of words; corpus: set of texts 
   - may expand later (2019/09/29) 
 
-* CBOW:
+* CBOW(Continuous bag-of-words):
+> predict the center word  from all context words, n predict 1
 
-* SGNS(Skip-gram with Negative Sampling): [Distributed Representations of Words and Phrases
+* Skip-gram: 
+> predict each context word from center word, 1 predict n
+  - optimizations
+    1. Hierarchical Softmax:
+       - output layer: using haffman tree
+    
+    2. Negative Sampling: 
+[Distributed Representations of Words and Phrases
 and their Compositionality](https://ronan.collobert.com/pub/matos/2008_nlp_icml.pdf)
+
+
+
+* [Improving Distributional Similarity
+with Lessons Learned from Word Embeddings](https://www.aclweb.org/anthology/Q15-1016)
 
 
 * GloVe: 
