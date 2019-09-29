@@ -28,27 +28,62 @@ Half a year has passed since I joined Okumura Lab, but still can't develop a foc
    ![](./images/cross-lingual-embedding.png)  
    - bilingual approaches --> multilingual setting
 
-2. Data Requirements: 
-   - alignment: word / sentence / document  
-   - parallel / comparable ( about the same topic)
+2. Data Requirements (choice of bilingual supervision signal): 
+   - alignment (align a cross-lingual representation space): word / sentence / document  
+   - parallel (exact translation) / comparable (about the same topic, only similar in some way)
+   ![nature and alignment](./images/nature-and-alignment.png)
    
 3. Obejective Functions 
 
 4. Values:  
-   - compare meaning of words across languages
+   - compare meaning of words across languages, provide fine-grained word-level links between languages
    - mode transfer between languages (resource-rich --> low-resource, through common representation space), can also be evaluation.
 
 #### [Monolingual Embedding Models](#monolingual-word-embeddings)
 
  
 #### Cross-lingual Representations before Embeddings
+
+- pre-date word embedding ideas
+  - data: seed lexica / parallel data / document-aligned data
+  - learning from limited bilingual supervision
+  
+- language-independent representations
+  - rely on abstract linguistic labels, not lexical features (delexicalized cross-lingual and domain transfer)
+  - rely on syntactic/POS contexts(2015) 
+* [How to (Properly) Evaluate Cross-Lingual Word Embeddings:
+On Strong Baselines, Comparative Analyses, and Some Misconceptions](https://www.aclweb.org/anthology/P19-1070)
+
 #### Typology
+
+> for final performance: choice of data \> underlying architecture
+* after carefully chosen data, fine-grained optimized by architecture/hyper-parameters/fine-tuning
+* [Cross-lingual Models of Word Embeddings: An Empirical Comparison](https://www.aclweb.org/anthology/P16-1157)
+
+
 #### Alignment
 * Approaches
   * mapping-based
   * pseudo-bilingual corpora based
   * hybrid / joint 
 * word
+  - parallel
+    - using bilingual/cross-lingual dictionary
+      -automatically align words in a parallel corpus -> produce bilingual dictionary
+  - comparable
+    - need other modalities: images
+    
+* sentence
+  - parallel
+    - Europarl corpus (parliament text)
+  - comparable
+    - captions of same images
+    - different languages in similar images (not translations)
+
+* document (comparable)
+    - parallel requires translations, rare
+    - topic-aligned: Wikipedia
+    - class aligned: sentiment analysis / multi-class classification
 
 
 * [Unsupervised Cross-lingual Word Embeddings Based on Subword Alignment](http://www.tkl.iis.u-tokyo.ac.jp/new/uploads/publication_file/file/911/cicling2019.pdf)
@@ -104,12 +139,9 @@ Deep Neural Networks with Multitask Learning](https://ronan.collobert.com/pub/ma
     **2. Negative Sampling:** 
 [Distributed Representations of Words and Phrases
 and their Compositionality](./2nd/Distributed-Representations-of-Words-and-Phrases-and-their-Compositionality.md)
-         - 
+        
 
-
-
-* [Improving Distributional Similarity
-with Lessons Learned from Word Embeddings](https://www.aclweb.org/anthology/Q15-1016)
+       * [Improving Distributional Similarity with Lessons Learned from Word Embeddings](https://www.aclweb.org/anthology/Q15-1016)
 
 
 * GloVe: 
