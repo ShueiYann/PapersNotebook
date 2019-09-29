@@ -23,13 +23,29 @@ Half a year has passed since I joined Okumura Lab, but still can't develop a foc
 
 #### Introduction
 
-1. monoligual vector representations --> cross-lingual vector representations (in a joint embedding space)  
+1. Extensions: 
+   - monoligual vector representations --> cross-lingual vector representations (in a joint embedding space) 
+   - bilingual approaches --> multilingual setting
 ![](./images/cross-lingual-embedding.png)  
-2. data requirements: word/sentence/document alignment  
-3. obejective functions  
-4. value:  
+2. Data Requirements: 
+   - alignment: word / sentence / document  
+   - parallel / comparable ( about the same topic)
+3. Obejective Functions  
+4. Value:  
    - compare meaning of words across languages
    - mode transfer between languages (resource-rich --> low-resource, through common representation space), can also be evaluation.
+
+[#### Monolingual Embedding Models](#monolingual-word-embeddings)
+
+* 
+#### Cross-lingual Representations before embeddings
+#### Typology
+#### Alignment
+##### Approaches
+* mapping-based
+* pseudo-bilingual corpora based
+* hybrid / joint 
+##### word
 
 * [Unsupervised Cross-lingual Word Embeddings Based on Subword Alignment](http://www.tkl.iis.u-tokyo.ac.jp/new/uploads/publication_file/file/911/cicling2019.pdf)
 
@@ -40,5 +56,16 @@ Unluckily, it seems the idea of **using subword information in cross-lingual wor
 
 * [Unsupervised Cross-lingual Transfer of Word Embedding Spaces](https://aclweb.org/anthology/D18-1268)
 
-  
+### Monolingual Word Embeddings
+
+* LSA: [Indexing by Latent Semantic Analysis](http://lsa.colorado.edu/papers/JASIS.lsi.90.pdf)  
+1. factorize sparse word-word co-occurance matrix **C** --> dense word representations
+2. TF-IDF (Term Frequency-Inverse Document Frequency):
+![TF-IDF](https://images.app.goo.gl/qxaKN6EwA3wef9nQ8)
+   - weighting, more frequently a word in a documnet, more important; more docunments the word in, less important.   
+   - no location/context information
+* CBOW:
+* SGNS: 
+* GloVe: 
+
 
