@@ -3,6 +3,9 @@
 Half a year has passed since I joined Okumura Lab, but still can't develop a focused research question. **A little of everything, nothing at all.** This repo is developed to help me dig more in the topic I'm interested with.:muscle:	
 
 ## Principles
+> まず努力しなさい。人の倍の量の文献を採集し、その定理全てに目を通しなさい (証明は後から読んでも構いません)。各々の文献の間の相互の関係を理解しなさい。そして、文献をしまい、瞑想し、頭の中に入っている (読んだ文献の) 内容だけで、何ができるか、そして何ができそうかについて考えなさい。学会などで人の話を聞きなさい。アイデアが思いついたら、再び文献を読み直したり、新たな文献を集めて、その問題が解けるかどうかを判断しなさい。解けないならば、何が欠けていて解けないのかを見究めなさい。そして、この過程をノートに書き留めて、ときどき読み返しなさい。
+> [研究読本 植松友彦先生](http://www.it.ce.titech.ac.jp/uyematsu/howtoresearch.pdf)
+
 1. Papers are roughly divided to two types: 
    * directly lead to my research topic
    * related algorithm (ML/DL)
