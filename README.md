@@ -3,13 +3,13 @@
 Half a year has passed since I joined Okumura Lab, but still can't develop a focused research question. **A little of everything, nothing at all.** This repo is developed to help me dig more in the topic I'm interested with.:muscle:	
 
 ## Principles
-> まず努力しなさい。人の倍の量の文献を採集し、その定理全てに目を通しなさい (証明は後から読んでも構いません)。各々の文献の間の相互の関係を理解しなさい。そして、文献をしまい、瞑想し、頭の中に入っている (読んだ文献の) 内容だけで、何ができるか、そして何ができそうかについて考えなさい。学会などで人の話を聞きなさい。アイデアが思いついたら、再び文献を読み直したり、新たな文献を集めて、その問題が解けるかどうかを判断しなさい。解けないならば、何が欠けていて解けないのかを見究めなさい。そして、この過程をノートに書き留めて、ときどき読み返しなさい。
-> [研究読本 植松友彦先生](http://www.it.ce.titech.ac.jp/uyematsu/howtoresearch.pdf)
+> まず努力しなさい。人の倍の量の文献を採集し、その定理全てに目を通しなさい (証明は後から読んでも構いません)。各々の文献の間の相互の関係を理解しなさい。そして、文献をしまい、瞑想し、頭の中に入っている (読んだ文献の) 内容だけで、何ができるか、そして何ができそうかについて考えなさい。学会などで人の話を聞きなさい。アイデアが思いついたら、再び文献を読み直したり、新たな文献を集めて、その問題が解けるかどうかを判断しなさい。解けないならば、何が欠けていて解けないのかを見究めなさい。そして、この過程をノートに書き留めて、ときどき読み返しなさい。  
+> [研究読本 植松友彦先生](http://www.it.ce.titech.ac.jp/uyematsu/howtoresearch.pdf)  
 
 1. Papers are roughly divided to two types: 
    * directly lead to my research topic
    * related algorithm (ML/DL)
-2. Intensive reading of papers belonging to 2nd level (references by 1st level) are in /2nd, while anchored in this document.
+2. Intensive reading of papers of 2nd level (references of 1st level) are in /2nd directory, while anchored in this document.
 
 ## Catalogue
 
@@ -40,7 +40,11 @@ Half a year has passed since I joined Okumura Lab, but still can't develop a foc
 
 4. Values:  
    - compare meaning of words across languages, provide fine-grained word-level links between languages
-   - mode transfer between languages (resource-rich --> low-resource, through common representation space), can also be evaluation.
+   - mode transfer between languages (resource-rich --> low-resource, through common representation space), can also be evaluation.  
+     - cross-lingual knowledge transfer: cross-lingual parser transfer
+       
+   - relying on shared lexical information, boost syntactic parsing, POS tagging, semantic role labeling
+   - advantages in neural network: continuous representations can be directly plugged into end-to-end neural architectures as sets of lexical features.
 
 #### [Monolingual Embedding Models](#monolingual-word-embeddings)
 
@@ -49,7 +53,21 @@ Half a year has passed since I joined Okumura Lab, but still can't develop a foc
 
 - pre-date word embedding ideas
   - data: seed lexica / parallel data / document-aligned data
-  - learning from limited bilingual supervision
+  - traditional context counting
+   [Cross-lingual Induction of Selectional Preferences(2010)](https://www.aclweb.org/anthology/N10-1135)
+with Bilingual Vector Spaces
+   [Bootstrapping Unsupervised Bilingual Lexicon Induction(2017)](https://www.aclweb.org/anthology/E17-2098)
+  - learning from limited bilingual supervision, **word pairs from seed bilingual lexicons**
+    using **seed** bilingual dictionary  
+   [Bilingual Lexicon Extraction from Comparable Corpora Using Label
+Propagation](https://www.aclweb.org/anthology/D12-1003)  
+    predecessor to cross-lingual word embedding models
+  - cosine similarity --> word translation probabilities
+   [**A Strong Baseline for Learning Cross-Lingual Word Embeddings
+from Sentence Alignments(2017)**](https://www.aclweb.org/anthology/E17-1072)  
+    greedy decoding algorithm
+  
+
   
 - language-independent representations
   - rely on abstract linguistic labels, not lexical features (delexicalized cross-lingual and domain transfer)
@@ -67,12 +85,17 @@ On Strong Baselines, Comparative Analyses, and Some Misconceptions](https://www.
 #### Alignment
 * Approaches
   * mapping-based
-  * pseudo-bilingual corpora based
+  * pseudo-bilingual corpora based 
+    1. merge aligned document pairs
+    2. apply a monolingual representation model on top of the merged data
+    --> pseudo-cross-lingual
   * hybrid / joint 
 * word
   - parallel
     - using bilingual/cross-lingual dictionary
-      -automatically align words in a parallel corpus -> produce bilingual dictionary
+      - automatically align words in a parallel corpus -> produce bilingual dictionary
+        
+        
   - comparable
     - need other modalities: images
     
@@ -80,16 +103,21 @@ On Strong Baselines, Comparative Analyses, and Some Misconceptions](https://www.
   - parallel
     - Europarl corpus (parliament text)
   - comparable
-    - captions of same images
-    - different languages in similar images (not translations)
+    - captions of **same** images
+    - different languages in **similar** images (not translations)
 
 * document (comparable)
     - parallel requires translations, rare
-    - topic-aligned: Wikipedia
-    - class aligned: sentiment analysis / multi-class classification
+    - **topic-aligned**: Wikipedia  
+      multilanguage probabilistic topic modeling
+      topic distributions
+      shared topical spaces
+     [Inverted indexing for cross-lingual NLP](https://zeljkoagic.github.io/publications/sogaard2015-inverted.pdf)
+    - **class aligned**: sentiment analysis / multi-class classification
+    
 
-
-* [Unsupervised Cross-lingual Word Embeddings Based on Subword Alignment](http://www.tkl.iis.u-tokyo.ac.jp/new/uploads/publication_file/file/911/cicling2019.pdf)
+* subword 
+  * [**Unsupervised Cross-lingual Word Embeddings Based on Subword Alignment**](http://www.tkl.iis.u-tokyo.ac.jp/new/uploads/publication_file/file/911/cicling2019.pdf)
 
 Unluckily, it seems the idea of **using subword information in cross-lingual word embedding** has already been published by [Jin SAKUMA](http://www.tkl.iis.u-tokyo.ac.jp/~jsakuma/) of Yoshinaga Lab in U-Tokyo. **Need careful look to see what future work can be done while remain originality**.(2019/09/28)
 
@@ -139,14 +167,18 @@ Deep Neural Networks with Multitask Learning](https://ronan.collobert.com/pub/ma
     1. Hierarchical Softmax:
        - output layer: using haffman tree
     
-    **2. Negative Sampling:** 
-[Distributed Representations of Words and Phrases
-and their Compositionality](./2nd/Distributed-Representations-of-Words-and-Phrases-and-their-Compositionality.md)
+  **2. Negative Sampling:**   
+  
+    * [Distributed Representations of Words and Phrases and their Compositionality](./2nd/Distributed-Representations-of-Words-and-Phrases-and-their-Compositionality.md)
         
-
-       * [Improving Distributional Similarity with Lessons Learned from Word Embeddings](https://www.aclweb.org/anthology/Q15-1016)
+    * [Improving Distributional Similarity with Lessons Learned from Word Embeddings](https://www.aclweb.org/anthology/Q15-1016)
 
 
 * GloVe: 
 
+
+### Subwords
+* [**Bilingual Lexicon Induction by Learning to Combine Word-Level and
+Character-Level Representations(2017)**](https://www.aclweb.org/anthology/E17-1102)
+* 
 
