@@ -3,7 +3,7 @@
 Half a year has passed since I joined Okumura Lab, but still can't develop a focused research question. **A little of everything, nothing at all.** This repo is developed to help me dig more in the topic I'm interested with.:muscle:	
 
 ## Principles
-> まず努力しなさい。人の倍の量の文献を採集し、その定理全てに目を通しなさい (**証明は後から読んでも構いません**)。各々の文献の間の相互の関係を理解しなさい。そして、文献をしまい、瞑想し、頭の中に入っている (読んだ文献の) 内容だけで、何ができるか、そして何ができそうかについて考えなさい。学会などで人の話を聞きなさい。**アイデアが思いついたら、再び文献を読み直したり、**新たな文献を集めて、その問題が解けるかどうかを判断しなさい。解けないならば、**何が欠けていて解けないのか**を見究めなさい。そして、この過程をノートに書き留めて、**ときどき読み返しなさい**。  
+> まず努力しなさい。人の倍の量の文献を採集し、その定理全てに目を通しなさい (**証明は後から読んでも構いません**)。各々の文献の間の相互の関係を理解しなさい。そして、文献をしまい、瞑想し、頭の中に入っている (読んだ文献の) 内容だけで、何ができるか、そして何ができそうかについて考えなさい。学会などで人の話を聞きなさい。**アイデアが思いついたら、再び文献を読み直したり**、新たな文献を集めて、その問題が解けるかどうかを判断しなさい。解けないならば、**何が欠けていて解けないのか**を見究めなさい。そして、この過程をノートに書き留めて、**ときどき読み返しなさい**。  
 > [「研究読本」 植松友彦先生](http://www.it.ce.titech.ac.jp/uyematsu/howtoresearch.pdf)  
 
 1. Papers are roughly divided to two types: 
@@ -36,7 +36,7 @@ Half a year has passed since I joined Okumura Lab, but still can't develop a foc
    - parallel (exact translation) / comparable (about the same topic, only similar in some way)
    ![nature and alignment](./images/nature-and-alignment.png)
    
-3. Obejective Functions 
+3. Objective Functions 
 
 4. Values:  
    - compare meaning of words across languages, provide fine-grained word-level links between languages
@@ -54,14 +54,15 @@ Half a year has passed since I joined Okumura Lab, but still can't develop a foc
 - pre-date word embedding ideas
   - data: seed lexica / parallel data / document-aligned data
   - traditional context counting  
+     
    [Cross-lingual Induction of Selectional Preferences(2010)](https://www.aclweb.org/anthology/N10-1135)  
-
-   [Bootstrapping Unsupervised Bilingual Lexicon Induction(2017)](https://www.aclweb.org/anthology/E17-2098)
-  - learning from limited bilingual supervision, **word pairs from seed bilingual lexicons**  
-    using **seed** bilingual dictionary  
+　　[Bootstrapping Unsupervised Bilingual Lexicon Induction(2017)](https://www.aclweb.org/anthology/E17-2098)
+  - learning from limited bilingual supervision
+    using **seed** bilingual dictionary**word pairs from seed bilingual lexicons**  
+      
    [Bilingual Lexicon Extraction from Comparable Corpora Using Label
 Propagation](https://www.aclweb.org/anthology/D12-1003)  
-    predecessor to cross-lingual word embedding models
+    
   - cosine similarity --> word translation probabilities  
    [**A Strong Baseline for Learning Cross-Lingual Word Embeddings
 from Sentence Alignments(2017)**](https://www.aclweb.org/anthology/E17-1072)  
@@ -86,7 +87,7 @@ from Sentence Alignments(2017)**](https://www.aclweb.org/anthology/E17-1072)
 * pseudo-bilingual corpora based 
   1. merge aligned document pairs
   2. apply a monolingual representation model on top of the merged data  
-  --> pseudo-cross-lingual
+ --> pseudo-cross-lingual
 * hybrid / joint 
 
 #### Alignment: detailed disscussed in the following sections
@@ -110,16 +111,15 @@ from Sentence Alignments(2017)**](https://www.aclweb.org/anthology/E17-1072)
 * document (comparable)
     - parallel requires translations, rare
     - **topic-aligned**: Wikipedia  
-      multilanguage probabilistic topic modeling  
-      topic distributions  
-      shared topical spaces  
-     [Inverted indexing for cross-lingual NLP](https://zeljkoagic.github.io/publications/sogaard2015-inverted.pdf)  
+      
+      multilanguage probabilistic topic modeling / topic distributions /  shared topical spaces  
+     [Inverted indexing for cross-lingual NLP (Using Wikipedia)](https://zeljkoagic.github.io/publications/sogaard2015-inverted.pdf)  
     - **class aligned**: sentiment analysis / multi-class classification
     
 
 * subword 
   * [**Unsupervised Cross-lingual Word Embeddings Based on Subword Alignment**](http://www.tkl.iis.u-tokyo.ac.jp/new/uploads/publication_file/file/911/cicling2019.pdf)
-
+  
   Unluckily, it seems the idea of **using subword information in cross-lingual word embedding** has already been published by [Jin SAKUMA](http://www.tkl.iis.u-tokyo.ac.jp/~jsakuma/) of Yoshinaga Lab in U-Tokyo. **Need careful look to see what future work can be done while remain originality**.(2019/09/28)
 
 
@@ -147,7 +147,9 @@ Three methods:
   2. minimize monolingual losses of source and target languages, jointly with cross-lingual regularization term
 
 
-Mapping-based Method: **to learn a mapping**  
+#### Mapping-based Method
+
+**to learn a mapping**  
 
 Differ along multiple dimensions:  
 * mapping method
@@ -159,7 +161,7 @@ Four types:
 * Regression: map embeddings in source to target space, maximizing similarity
   - **similar geometric constellations**, possible to learn a linear projection
   - seed words: 5000 most frequent word pairs  
-    objective function: Euclidean distance(mean sqaures error, MSE)
+    objective function: Euclidean distance(mean sqaures error, MSE)  
     optimization: [stochastic gradient descent](#stochastic-gradient-descent)
 * Orthogonal: regression + orthogonal transformation
 * Canonical: map both to a new shared space
@@ -229,9 +231,9 @@ Character-Level Representations(2017)**](https://www.aclweb.org/anthology/E17-11
 
 ## Stochastic Gradient Descent
 ### Gradient Descent
-suppose a loss function
+suppose a loss function  
 ![loss-function](https://latex.codecogs.com/gif.latex?J(\theta&space;)&space;=&space;\frac{1}{2}\sum&space;(h_{\theta&space;}(x)-y)^{2})  
 ![h_x](https://latex.codecogs.com/gif.latex?h_{\theta&space;}(x)&space;=&space;\theta&space;_{0}&plus;\theta&space;_{1}x_{1}&plus;...&plus;\theta&space;_{n}x_{n})  
-![loss-function](https://latex.codecogs.com/gif.latex?J(\theta&space;)&space;=&space;\frac{1}{2}\sum&space;(h_{\theta&space;}(x)-y)^{2})  
+
 simply you can directly solve an equation about derivative = 0， but when high dimensional, may not solvable.  
 
